@@ -17,6 +17,15 @@
         
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
@@ -27,39 +36,55 @@
         <!--nav-->
         <nav>
           <div class="navbar bg-slate-50">
-            <div class="navbar-start">
-              <i class="fa-solid fa-arrow-right bg-green-500 rounded-[50%] text-xl -rotate-45"></i>
-              <a class="btn btn-ghost text-xl">Rinterio</a>
+            <div class="navbar-start flex items-center space-x-2">
+              <i class="fa-solid fa-arrow-right bg-green-500 rounded-full text-xl p-1 -rotate-45"></i>
+              <a class="btn btn-ghost text-xl font-bold">Rinterio</a>
             </div>
-            <div class="navbar-center  lg:flex">
+            <div class="navbar-center hidden lg:flex space-x-5">
+          
               <ul class="menu menu-horizontal px-1">
                 <li><a>Home</a></li>
                 <li><a>Services</a></li>
                 <li><a>Portfolio</a></li>
                 <li><a>Blogs</a></li>
                 <li><a>Contact Us</a></li>
-              </div>
+              </ul>
+              </div>  
+
+              <div class="navbar-center  lg:hidden">
+                <button class="btn btn-square btn-ghost id=menu-toggle">
+                  <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="menu hidden" id="menu"">
+                  <li><a>Home</a></li>
+                  <li><a>Services</a></li>
+                  <li><a>Portfolio</a></li>
+                  <li><a>Blogs</a></li>
+                  <li><a>Contact Us</a></li>
+                  </ul>
+                </div>
 
             <div class="navbar-end gap-3">
               <i class="fa-solid fa-magnifying-glass bg-white rounded-[50%] p-2"></i>
               <i class="fa-solid fa-cart-shopping bg-white rounded-[50%] p-2"></i>
-              <div class="rounded-xl flex">
+              <div class="rounded-xl ">
                 <a class="btn bg-green-300">Book Consult<i class="fa-solid fa-arrow-right bg-black text-xl rounded-[50%] -rotate-45"></i>                </a>              
               </div>
             </div>
           </div>
         </nav>
         <!--hero section-->
-        <div class="hero bg-slate-50 ">
-          <div class="hero-content text-center">
-            <div class="max-w-md">
-              <img src="./assets/banner.png" alt="">
-              <h1 class="text-5xl font-bold color-black-800">A barn house of this design has a striking appearance</h1>
-              <p class="py-6">
+        <div class="hero bg-slate-50">
+          <div class="hero-content text-center lg:text-left">
+            <div class="max-w-md lg:max-w-lg">
+              <img src="./assets/banner.png" alt="" class="w-full lg:w-auto mx-auto lg:mx-0">
+              <h1 class="text-3xl lg:text-5xl font-bold text-black">A barn house with striking appearance</h1>
+              <p class="py-6 text-sm lg:text-lg">Provident cupiditate voluptatem et in...</p>
+        
                 Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                 quasi. In deleniti eaque aut repudiandae et a id nisi.
               </p>
-              <button class="btn btn-primary bg-green-200"> View Details<div class="rounded-xl flex">
+              <button class="btn  bg-green-200 rounded-5xl sm: w-full "> View Details<div class="rounded-3xl flex">
                <i class="fa-solid fa-arrow-right bg-green-500 text-xl rounded-[50%] -rotate-45"></i>                            
               </div></button>
             </div>
@@ -72,9 +97,9 @@
       <!--We design -->
       <div class="bg-green-100  ">
         <div class="pl-10 pt-5"><a><img  src="./assets/Vector.png" alt=""></a></div>
-        <div class="grid grid-cols-2 p-32 gap-3">
+        <div class="grid grid-cols-1 lg:grid-cols-2 p-6 lg:p-32 gap-3">
           <div>
-            <button class="btn bg-white"> View Details<div class="rounded-xl flex">
+            <button class="btn bg-white w-full lg:w-auto border-none"> View Details<div class="rounded-xl flex">
              <i class="fa-solid fa-arrow-right text-xl"></i>            
             </div></button>
             <h1 class="text-3xl font-bold ">We design thoughtful,<br> liveable spaces</h1>
@@ -117,9 +142,9 @@
             </p>
             <div class=" flex  gap-5">
               <div class="p-6 bg-pink-400 card ">
-               <div> <img src="./assets/concept.png" alt=""></div>
+               <div> <img src="./assets/concept.png" alt="" class="w-16 lg:w-24"></div>
                 <div>
-                <h2 class="text-xl">Concept</h2>
+                <h2 class="text-lg lg:text-xl font-semibold">Concept</h2>
                 <p>The barn house captivates with its blend of rustic charm and modern.</p>
                 </div>
               </div>
@@ -127,7 +152,7 @@
                 <div> <img src="./assets/flow-chart.png" alt=""></div>
                  <div>
                  <h2 class="text-xl">Design Process</h2>
-                 <p>The barn house captivates with its blend of rustic charm and modern.</p>
+                 <p class="text-sm lg:text-base">The barn house captivates with its blend of rustic charm and modern.</p>
                  </div>
                </div>
                <div class=" p-6 bg-green-300 card">
@@ -155,7 +180,7 @@
 
       <!--our latest-->
 
-      <div class="hero  min-h-screen px-30 py-25">
+      <div class="hero  px-8 py-10">
         <div class="hero-content text-center">
           <div>
             <button class="btn bg-green-100 rounded-3xl "> View Details<div class=" h-3 flex">
@@ -167,7 +192,8 @@
             </p>
           </div>
         </div>
-        <div class="grid grid-rows-2">
+      </div>
+        <div class="grid grid-rows-2 sm:grid-cols-1  gap-3">
           <div class="flex gap-3">
             <img src="assets/img1.png" alt="">
             <div>
@@ -181,7 +207,7 @@
             <img src="assets/img2.png" alt="">
           </div>
           </div>
-          <div class="flex gap-3 pt-5">
+          <div class="flex sm:flex-column gap-3 pt-5">
             <img src="assets/img3.png" alt="">
             <img src="assets/img4.png" alt="">
             <div>
@@ -253,55 +279,55 @@
           </p>
         </div>
       </div>
-      <div class="grid grid-cols-2 gap-3">
+      <div class="grid grid-cols-1 gap-3 lg:grid-cols-2">
         <div class="gap-3 grid grid-cols-1">
           <input
   type="text"
   placeholder="First Name*"
-  class="input input-bordered input-md w-full max-w-xs bg-white  rounded-3xl" />
+  class="input input-bordered input-md w-full lg:w-1/2 bg-white rounded-3xl" />
   <input
   type="text"
   placeholder="Phone Number*"
-  class="input input-bordered input-md w-full max-w-xs  bg-white rounded-3xl" />
-        </div>
+  class="input input-bordered input-md w-full lg:w-1/2 bg-white rounded-3xl">
+</div>
         <div class="gap-3 grid grid-cols-1">
           <input
   type="text"
   placeholder="Last Name*"
-  class="input input-bordered input-md w-full max-w-xs bg-white  rounded-3xl" />
+ class="input input-bordered input-md w-full lg:w-1/2 bg-white rounded-3xl">
+
   <input
   type="text"
   placeholder="Email Number*"
-  class="input input-bordered input-md w-full max-w-xs  bg-white rounded-3xl" />
-        </div>
+  class="input input-bordered input-md w-full lg:w-1/2 bg-white rounded-3xl">     </div>
       </div>
       <textarea
   placeholder="Write your message here"
-  class="textarea textarea-bordered textarea-lg w-full max-w-xs mt-3 bg-white w-[100%]"></textarea>
-  <div class="rounded-xl flex">
-    <a class="btn bg-green-300">Book Consult<i class="fa-solid fa-arrow-right bg-black text-xl rounded-[50%] -rotate-45"></i>                </a>              
+  class="textarea  textarea-lg w-full max-w-xs mt-3 bg-white w-[100%]"></textarea>
+  <div class="rounded-5xl  justify-centre mt-10">
+    <a class="btn bg-green-300 justify-centre border-none">Book Consult<i class="fa-solid fa-arrow-right bg-black text-xl rounded-full -rotate-45"></i>                </a>              
   </div>
     </div>
 
     </main>
     <footer>
-      <div class="hero bg-base-200 min-h-screen">
+      <div class="hero bg-base-200 py-12">
         <div class="hero-content text-center">
           <div class="max-w-md">
-            <h1 class="text-5xl font-bold"><i class="fa-solid fa-arrow-right bg-green-500 rounded-[50%] text-xl -rotate-45"></i>
+            <h1 class="text-3xl lg:text-5xl font-bold mb-6 lg:gap-10 justify-centre mb-6"><i class="fa-solid fa-arrow-right bg-green-500 rounded-[50%] text-xl -rotate-45"></i>
               <a class="btn btn-ghost text-xl">Rinterio</a></h1>
             <p class="py-6">
               The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents.
             </p>
-            <ul class="flex gap-10">
+            <ul class="flex flex-col lg:flex-row gap-10">
               <li>Home</li>
               <li>Services</li>
               <li>Portfolio</li>
               <li>Blogs</li>
               <li>Contact Us</li>
             </ul>
-            <div class="rounded-5xl flex content-centre">
-              <a class="btn bg-green-300">Book Consult<i class="fa-solid fa-arrow-right bg-black text-xl rounded-[50%] -rotate-45"></i>                </a>              
+            <div class="rounded-5xl  justify-centre mt-10">
+              <a class="btn bg-green-300 justify-centre">Book Consult<i class="fa-solid fa-arrow-right bg-black text-xl rounded-full -rotate-45"></i>                </a>              
             </div>
           </div>
         </div>
